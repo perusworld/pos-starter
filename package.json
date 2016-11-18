@@ -1,0 +1,19 @@
+{
+  "name": "pos-starter",
+  "version": "1.0.0",
+  "description": "Point Of Sale Starter App Ionic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/perusworld/pos-starter"
+  },
+  "author": "Saravana Perumal Shanmugam <saravanaperumal@msn.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}

@@ -1,0 +1,13 @@
+<ion-view>
+    <ion-nav-title> Sales - {{chart.period}}</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <a ng-click="all()" class="button button-icon icon ion-calendar" title="All"></a>
+        <a ng-click="todays()" class="button button-icon icon ion-ionic" title="Today's"></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <nvd3-multi-bar-horizontal-chart data="chartData" id="chartData" xAxisTickFormat="xAxisTickFormat()" showLegend="true" showControls="true"
+            height="{{chart.height}}" showXAxis="true" showYAxis="true" interactive="true" tooltips="true" noData="Please wait loading data...">
+            <svg></svg>
+        </nvd3-multi-bar-horizontal-chart>
+    </ion-content>
+</ion-view>

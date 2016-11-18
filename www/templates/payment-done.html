@@ -1,0 +1,29 @@
+﻿<ion-view>
+    <ion-nav-title>Order Complete - Order {{confirmation.id}}</ion-nav-title>
+    <ion-content>
+        <div>
+            <h2>
+                <strong>Order Confirmed</strong>
+            </h2>
+
+            <p>
+                {{confirmation.desc}}
+            </p>
+
+            <p>
+                Total :
+                <strong>${{confirmation.amount | currency}}</strong>
+            </p>
+        </div>
+        <form class="list">
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="hi@hello.com">
+                </label>
+            </ion-list>
+            <button ng-click="emailClearCart()" class="button button-positive button-block ">Email Receipt</button>
+            <a ng-click="clearCart()" class="button button-positive button-block">Continue</a>
+        </form>
+    </ion-content>
+</ion-view>

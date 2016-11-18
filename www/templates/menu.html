@@ -1,0 +1,26 @@
+﻿<ion-view>
+    <ion-nav-title>Food Menu</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <a class="button button-icon icon ion-ios-settings-strong" title="Filter"></a>
+        <a class="button button-icon icon ion-plus-circled" title="Add New Menu Item"></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="row responsive-sm" ng-repeat="group in grouped">
+            <div class="col" ng-repeat="item in group">
+                <div ng-if="item.name" class="list card">
+                    <div class="item item-avatar">
+                        <img ng-src="{{item.image}}">
+                        <h2>{{item.name}}</h2>
+                        <p>{{item.price}}</p>
+                    </div>
+                    <div class="item item-body">
+                        <img class="full-image" ng-src="{{item.image}}">
+                        <p>
+                            <a href="#" class="button button-small button-assertive">Delete</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

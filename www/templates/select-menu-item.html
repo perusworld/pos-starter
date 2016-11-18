@@ -1,0 +1,27 @@
+﻿<ion-view>
+    <ion-nav-title>Select Menu Item</ion-nav-title>
+    <ion-content>
+        <a class="item item-icon-left item-divider">
+            <i class="icon ion-android-cart"></i> Items In Cart
+            <span class="badge badge-assertive">{{orderCart.count}}</span>
+        </a>
+
+        <div class="row responsive-sm" ng-repeat="group in grouped">
+            <div class="col" ng-repeat="item in group">
+                <div ng-if="item.name" class="list card">
+                    <div class="item item-avatar">
+                        <img ng-src="{{item.image}}">
+                        <h2>{{item.name}}</h2>
+                        <p>{{item.price}}</p>
+                    </div>
+                    <div class="item item-body">
+                        <img class="full-image" ng-src="{{item.image}}">
+                        <p>
+                            <a class="button button-small button-positive" ng-click="addToCart(item)">Add To Cart</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

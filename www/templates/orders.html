@@ -1,0 +1,20 @@
+<ion-view>
+  <ion-nav-title>Orders</ion-nav-title>
+  <ion-nav-buttons side="right">
+    <a class="button button-icon icon ion-ios-settings-strong" title="Filter"></a>
+    <a class="button button-icon icon ion-plus-circled" title="Begin New Order" ng-click="newOrder()"></a>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item item-icon-left item-icon-right" ng-repeat="order in orders" type="item-text-wrap" href="#/tab/order-details/{{order.id}}">
+        <i ng-if="order.status == 'Fulfilled'" class="icon ion-android-checkmark-circle"></i>
+        <i ng-if="order.status == 'In Progress'" class="icon ion-load-a"></i>
+        <i ng-if="order.status == 'Cancelled'" class="icon ion-ios-close-outline"></i>
+        <h2>{{order.name}}</h2>
+        <span ng-if="order.status == 'Fulfilled'" class="badge badge-balanced">{{order.status}}</span>
+        <span ng-if="order.status == 'In Progress'" class="badge badge-energized">{{order.status}}</span>
+        <span ng-if="order.status == 'Cancelled'" class="badge badge-assertive">{{order.status}}</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
