@@ -1,0 +1,7 @@
+{
+  "name": "pos-starter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
