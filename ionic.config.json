@@ -1,7 +1,7 @@
 {
-  "name": "pos-starter",
+  "name": "POS Starter",
   "integrations": {
     "capacitor": {}
   },
-  "type": "react"
+  "type": "angular"
 }
