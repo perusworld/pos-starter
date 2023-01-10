@@ -1,0 +1,31 @@
+<ion-list>
+  <ion-button expand="block" color="primary" (click)="callAdd()">
+    <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+    Add new item
+  </ion-button>
+  <ion-item *ngFor="let menuItem of cart?.items;let idx = index" lines="full">
+    <ion-thumbnail slot="start">
+      <ion-img [src]="menuItem.item.image" [alt]="menuItem.item.name"></ion-img>
+    </ion-thumbnail>
+    <ion-label>
+      <h3>{{menuItem.item.name}}</h3>
+      <p>{{menuItem.item.price}}</p>
+    </ion-label>
+    <ion-badge slot="end" color="primary">{{menuItem.qty}}</ion-badge>
+  </ion-item>
+  <ion-item lines="full" color="light">
+    <ion-icon slot="start" name="cart-outline"></ion-icon>
+    <ion-label>
+      <h3>Total</h3>
+    </ion-label>
+    <ion-badge slot="end" color="success">{{cart?.total || 0 | currency:currency}}</ion-badge>
+  </ion-item>
+  <ion-button expand="block" color="primary" (click)="callPayment()">
+    <ion-icon slot="start" name="card-outline"></ion-icon>
+    Payment
+  </ion-button>
+  <ion-button expand="block" color="warning" (click)="callClear()">
+    <ion-icon slot="start" name="trash-outline"></ion-icon>
+    Clear cart
+  </ion-button>
+</ion-list>

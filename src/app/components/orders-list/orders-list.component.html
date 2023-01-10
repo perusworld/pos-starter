@@ -1,0 +1,17 @@
+<ion-list>
+  <ion-item lines="none">
+    <ion-button slot="end" fill="clear" (click)="callNewOrder()">
+      <ion-icon slot="icon-only" name="bag-add-outline"></ion-icon>
+    </ion-button>
+    <ion-button slot="end" fill="clear" (click)="callCart()">
+      <ion-icon slot="icon-only" name="bag-handle-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-item *ngFor="let ord of orders;let idx = index" lines="full">
+    <ion-icon [name]="utl.iconForOrderStatus(ord.status)" [color]="utl.colorForOrderStatus(ord.status)" slot="start"></ion-icon>
+    <ion-label>
+      {{ord.name}}
+    </ion-label>
+    <ion-badge slot="end" [color]="utl.colorForOrderStatus(ord.status)">{{ord.status}}</ion-badge>
+  </ion-item>
+</ion-list>

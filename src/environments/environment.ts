@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  posAppName: 'Any Donalds',
+  timeZone: 'America/Los_Angeles',
+  menu: 'fast-food-menu',
+  currency: 'USD',
+  tax: 9.5,
+  features: {
+    showHeader: true,
+  },
 };
 
 /*

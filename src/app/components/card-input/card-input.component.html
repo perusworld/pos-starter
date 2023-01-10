@@ -1,0 +1,52 @@
+<form [formGroup]="paymentForm">
+  <ion-list>
+    <ion-item-divider>{{cart?.name}}</ion-item-divider>
+    <ion-item>
+      <ion-label position="fixed">Name</ion-label>
+      <ion-input formControlName="cardHolderName" placeholder="Cardholder Name"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!paymentForm.controls['cardHolderName'].valid &&
+    paymentForm.controls['cardHolderName'].touched">
+      <ion-label color="danger">Please enter a valid card holder name.</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Card</ion-label>
+      <ion-input formControlName="cardNumber" placeholder="Card Number" [class.invalid]="!paymentForm.controls['cardNumber'].valid &&
+      paymentForm.controls['cardNumber'].touched"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!paymentForm.controls['cardNumber'].valid &&
+    paymentForm.controls['cardNumber'].touched">
+      <ion-label color="danger">Please enter a valid card number.</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Expiry Date</ion-label>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="fixed">CVC</ion-label>
+      <ion-input formControlName="cardCVCCode" placeholder="CVC Code" [class.invalid]="!paymentForm.controls['cardCVCCode'].valid &&
+      paymentForm.controls['cardCVCCode'].touched"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!paymentForm.controls['cardCVCCode'].valid &&
+    paymentForm.controls['cardCVCCode'].touched">
+      <ion-label color="danger">Please enter a valid card cvc code.</ion-label>
+    </ion-item>
+    <ion-item lines="full" color="light">
+      <ion-icon slot="start" name="cart-outline" (click)="prefillCard()"></ion-icon>
+      <ion-label>
+        <h3>Total</h3>
+      </ion-label>
+      <ion-badge slot="end" color="success">{{cart?.total || 0 | currency:currency}}</ion-badge>
+    </ion-item>
+    <ion-button expand="block" color="primary" (click)="callPayment()">
+      <ion-icon slot="start" name="pricetags-outline"></ion-icon>
+      Continue
+    </ion-button>
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime" presentation="month-year" [yearValues]="data.yearValues"
+          (ionChange)="onDateChange($event)"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+  </ion-list>
+</form>
