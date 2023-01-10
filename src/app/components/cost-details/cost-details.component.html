@@ -1,5 +1,5 @@
 <ion-list>
-  <ion-item-divider>{{cart?.name}}</ion-item-divider>
+  <ion-item-divider *ngIf="showTitle">{{cart?.name}}</ion-item-divider>
   <ion-item lines="full">
     <ion-icon slot="start" name="fast-food-outline"></ion-icon>
     <ion-label>
@@ -21,7 +21,7 @@
     </ion-label>
     <ion-badge slot="end" color="success">{{cart?.total || 0 | currency:currency}}</ion-badge>
   </ion-item>
-  <ion-button expand="block" color="primary" (click)="callConfirm()">
+  <ion-button *ngIf="showButtons" expand="block" color="primary" (click)="callConfirm()">
     <ion-icon slot="start" name="shield-checkmark-outline"></ion-icon>
     Confirm
   </ion-button>

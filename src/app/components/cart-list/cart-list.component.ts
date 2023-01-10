@@ -10,6 +10,8 @@ import { environment } from 'src/environments/environment';
 export class CartListComponent implements OnInit {
 
   @Input() cart: Cart | undefined;
+  @Input() showButtons: boolean = true;
+  @Input() showTotal: boolean = true;
   @Output() onAdd = new EventEmitter();
   @Output() onPayment = new EventEmitter();
   @Output() onClear = new EventEmitter();

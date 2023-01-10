@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment';
 })
 export class CostDetailsComponent implements OnInit {
 
+  @Input() showButtons: boolean = true;
+  @Input() showTitle: boolean = true;
   @Input() cart: Cart | undefined;
   @Output() onConfirm = new EventEmitter();
 

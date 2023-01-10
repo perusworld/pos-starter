@@ -1,0 +1,26 @@
+<ion-list>
+  <ion-item-divider>Order Confirmed</ion-item-divider>
+  <ion-item lines="none">
+    <ion-text class="ion-padding">Thank you for your purchase, your order is being prepared. your order number is
+      <strong>{{cart?.id}}</strong></ion-text>
+  </ion-item>
+</ion-list>
+<app-cart-list [cart]="cart" [showButtons]="false" [showTotal]="false"></app-cart-list>
+<app-cost-details [cart]="cart" [showButtons]="false" [showTitle]="false"></app-cost-details>
+<ion-list>
+  <ion-item lines="none">
+    <form [formGroup]="emailForm">
+      <ion-input formControlName="email" type="email" placeholder="john@doe.com"></ion-input>
+    </form>
+  </ion-item>
+  <ion-item lines="none" *ngIf="!emailForm.controls['email'].valid && emailForm.controls['email'].touched">
+    <ion-label color="danger">Please enter a valid email.</ion-label>
+  </ion-item>
+  <ion-button expand="block" color="primary" (click)="callEmailReceipt()">
+    <ion-icon slot="start" name="mail-outline"></ion-icon>
+    Email Receipt
+  </ion-button>
+  <ion-button expand="block" color="primary" (click)="callContinue()">
+    Continue
+  </ion-button>
+</ion-list>
