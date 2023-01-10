@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Cart, Payment } from 'src/app/services/model';
+import { Cart } from 'src/app/services/model';
 import { OrderService } from 'src/app/services/order.service';
 import { UtilService } from 'src/app/services/util.service';
 
 @Component({
-  selector: 'app-confirm-order',
-  templateUrl: './confirm-order.page.html',
-  styleUrls: ['./confirm-order.page.scss'],
+  selector: 'app-order-summary',
+  templateUrl: './order-summary.page.html',
+  styleUrls: ['./order-summary.page.scss'],
 })
-export class ConfirmOrderPage implements OnInit {
+export class OrderSummaryPage implements OnInit {
 
   public data = {
     idParam: undefined,
@@ -39,22 +39,21 @@ export class ConfirmOrderPage implements OnInit {
   }
 
   /**
-   * onConfirm
+   * onEmailReceipt
    */
-  public async onConfirm() {
-    const done = await this.utl.doInLoading(`Confirming order`, async () => {
+  public async onEmailReceipt(email: string) {
+    const done = await this.utl.doInLoading(`Emailing receipt`, async () => {
       await this.utl.snooze();
-      let done = false;
-      if (this.data.cart) {
-        done = await this.orderSvc.confirm(this.data.cart.id);
-      }
-      this.utl.presentToast(done ? 'Order confirmed' : 'Failed to confirm order');
       return true;
     });
-    if (true === done) {
-      await this.orderSvc.newOrder();
-      this.router.navigate([`/order-summary/${this.data.cart?.id}`]);
-    }
+    this.utl.presentToast(done ? 'Email sent' : 'Failed to send email');
+  }
+
+  /**
+   * onContinue
+   */
+  public async onContinue() {
+    this.router.navigate([`/tabs`]);
   }
 
 }

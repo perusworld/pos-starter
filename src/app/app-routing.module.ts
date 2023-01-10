@@ -40,6 +40,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/confirm-order/confirm-order.module').then( m => m.ConfirmOrderPageModule)
   },
   {
+    path: 'order-summary/:id',
+    loadChildren: () => import('./pages/order-summary/order-summary.module').then( m => m.OrderSummaryPageModule)
+  },
+  {
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
   },

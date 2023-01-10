@@ -1,0 +1,5 @@
+<app-title [showBackButton]="true" [titleText]="'Order Status'" [showButtons]="true"></app-title>
+<ion-content>
+  <app-order-stats [cart]="data.cart" (onEmailReceipt)="onEmailReceipt($event)"
+    (onContinue)="onContinue()"></app-order-stats>
+</ion-content>
