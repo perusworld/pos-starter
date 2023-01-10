@@ -1,0 +1,4 @@
+<app-title [showBackButton]="true" [titleText]="'Payment Info'" [showButtons]="true"></app-title>
+<ion-content>
+  <app-card-input [cart]="data.cart" (onPayment)="onPayment($event)"></app-card-input>
+</ion-content>

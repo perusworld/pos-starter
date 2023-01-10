@@ -1,0 +1,8 @@
+<ion-grid *ngFor="let itms of menu;let idx = index">
+  <ion-row>
+    <ion-col *ngFor="let itm of itms;let idx = index" [size]="12" [sizeMd]="4" [sizeLg]="4">
+      <app-menu-item [menuItem]="itm" [showAddToCard]="showAddToCard" [showDelete]="showDelete" (onAdd)="doAdd($event)"
+        (onDelete)="doDelete($event)"></app-menu-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>

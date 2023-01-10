@@ -1,0 +1,4 @@
+<app-title [showBackButton]="true" titleText="Orders" [showButtons]="true"></app-title>
+<ion-content>
+  <app-orders-list [orders]="data.orders" (onNewOrder)="newOrder()" (onShowCart)="currentOrder()"></app-orders-list>
+</ion-content>

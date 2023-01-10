@@ -1,0 +1,17 @@
+<ion-card>
+  <ion-img [src]="menuItem?.image" [alt]="menuItem?.name"></ion-img>
+  <ion-card-header>
+    <ion-card-title>{{menuItem?.name}}</ion-card-title>
+    <ion-card-subtitle>{{menuItem?.price}}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content *ngIf="showDelete || showAddToCard">
+    <ion-button fill="solid" size="small" color="primary" *ngIf="showAddToCard" (click)="doAdd()">
+      <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+      Add to Cart
+    </ion-button>
+    <ion-button fill="solid" size="small" color="danger" *ngIf="showDelete" (click)="doDelete()">
+      <ion-icon slot="start" name="trash-outline"></ion-icon>
+      Delete
+    </ion-button>
+  </ion-card-content>
+</ion-card>

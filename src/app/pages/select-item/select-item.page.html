@@ -1,0 +1,21 @@
+<app-title [showBackButton]="true" [titleText]="'Select Items'" [showButtons]="true"></app-title>
+<ion-toolbar>
+  <ion-buttons slot="secondary">
+    <ion-text class="ion-padding-start"><strong>{{data.cart?.name}}</strong></ion-text>
+  </ion-buttons>
+  <ion-buttons slot="primary">
+    <ion-button color="primary" fill="clear" routerLink="/order-details/{{data.cart?.id}}">
+      <ion-badge slot="end">{{data.cart?.items?.length}}</ion-badge>
+    </ion-button>
+    <ion-button color="warning" fill="clear" routerLink="/pay-order/{{data.cart?.id}}">
+      <ion-icon slot="icon-only" name="card-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="primary" fill="clear" routerLink="/order-details/{{data.cart?.id}}">
+      <ion-icon slot="icon-only" name="bag-handle-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content>
+  <app-menu-list [menu]="data.menu" [showAddToCard]="true" [showDelete]="false" (onAdd)="doAdd($event)"
+    (onDelete)="doDelete($event)"></app-menu-list>
+</ion-content>

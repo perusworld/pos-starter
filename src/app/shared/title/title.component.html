@@ -1,0 +1,20 @@
+<ion-header *ngIf="showHeader">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" *ngIf="showBackButton">
+      <ion-button [routerLink]="['/tabs']" title="Home">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      {{appName}} {{ titleText?'-':'' }} {{ titleText }}
+    </ion-title>
+    <ion-buttons slot="end" *ngIf="showButtons">
+      <ion-button (click)="gotoSettings()" title="Settings">
+        <ion-icon name="cog-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="doLogout()" title="Logout">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

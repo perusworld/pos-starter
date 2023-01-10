@@ -1,0 +1,4 @@
+<app-title [showBackButton]="true" [titleText]="'Confirm Order'" [showButtons]="true"></app-title>
+<ion-content>
+  <app-cost-details [cart]="data.cart" (onConfirm)="onConfirm()" ></app-cost-details>
+</ion-content>
