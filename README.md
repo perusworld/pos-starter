@@ -1,4 +1,4 @@
-# Point Of Sale Starter App Ionic/Express #
+# Point Of Sale Starter App Ionic/Angular/Express #
 
 
 ## Images Courtesy ##
