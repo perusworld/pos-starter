@@ -13,8 +13,9 @@ export class AppComponent {
   }
 
   initializeApp() {
-    this.platform.ready().then(() => {
-      this.storage.init();
-    });
+    this.platform.ready()
+    .then(() => this.storage.init())
+    .then(() => console.log('done init'))
+    .catch(err => console.error(err));
   }
 }
