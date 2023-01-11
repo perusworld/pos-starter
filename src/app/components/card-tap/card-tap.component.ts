@@ -53,5 +53,9 @@ export class CardTapComponent implements OnInit {
 
   }
 
+  onWillDismiss(event: Event) {
+    this.data.isOpen = false;
+  }
+
 
 }
