@@ -1,0 +1,25 @@
+<ion-list>
+  <ion-button expand="block" color="primary" (click)="showTap()">
+    <ion-icon name="wifi-outline"></ion-icon>
+    Tap Card
+  </ion-button>
+</ion-list>
+<ion-modal [isOpen]="data.isOpen">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancelTap()">Cancel</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div id="container">
+        <ion-row class="ion-justify-content-center">
+          <ion-spinner name="bubbles" (click)="callPayment()"></ion-spinner>
+        </ion-row>
+        <strong>Tap your card</strong>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>

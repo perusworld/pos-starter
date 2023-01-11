@@ -42,3 +42,8 @@ export interface Cart extends Order {
   tax: number;
   payment: Payment;
 }
+
+export enum TapPurpose {
+  PAN = "PAN"
+}
+

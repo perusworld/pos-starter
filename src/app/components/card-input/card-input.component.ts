@@ -61,9 +61,9 @@ export class CardInputComponent implements OnInit {
    */
   public prefillCard() {
     this.paymentForm.setValue({
-      cardHolderName: 'John Doe',
-      cardNumber: '5555555555554444',
-      cardCVCCode: '123',
+      cardHolderName: environment.demo.cardHolderName,
+      cardNumber: environment.demo.cardNumber,
+      cardCVCCode: environment.demo.cardCVCCode,
     });
   }
 
