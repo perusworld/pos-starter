@@ -33,19 +33,19 @@ const routes: Routes = [
   },
   {
     path: 'order-details/:id',
-    loadChildren: () => import('./pages/order-details/order-details.module').then( m => m.OrderDetailsPageModule)
+    loadChildren: () => import('./pages/order-details/order-details.module').then(m => m.OrderDetailsPageModule)
   },
   {
     path: 'confirm-order/:id',
-    loadChildren: () => import('./pages/confirm-order/confirm-order.module').then( m => m.ConfirmOrderPageModule)
+    loadChildren: () => import('./pages/confirm-order/confirm-order.module').then(m => m.ConfirmOrderPageModule)
   },
   {
     path: 'order-summary/:id',
-    loadChildren: () => import('./pages/order-summary/order-summary.module').then( m => m.OrderSummaryPageModule)
+    loadChildren: () => import('./pages/order-summary/order-summary.module').then(m => m.OrderSummaryPageModule)
   },
   {
     path: 'settings',
-    loadChildren: () => import('./pages/settings/settings.module').then( m => m.SettingsPageModule)
+    loadChildren: () => import('./pages/settings/settings.module').then(m => m.SettingsPageModule)
   },
   {
     path: 'tabs',

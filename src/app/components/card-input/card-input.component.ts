@@ -42,7 +42,7 @@ export class CardInputComponent implements OnInit {
       this.onPayment.emit({
         pan: this.paymentForm.value.cardNumber,
         holderName: this.paymentForm.value.cardHolderName,
-        expMonth: this.data.expDate.monthLong,
+        expMonth: `${this.data.expDate.monthLong}`,
         expYear: `${this.data.expDate.year}`,
         cvc: this.paymentForm.value.cardCVCCode,
       });

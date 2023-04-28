@@ -46,7 +46,7 @@ export class CardTapComponent implements OnInit {
     this.onPayment.emit({
       pan: environment.demo.cardNumber,
       holderName: environment.demo.cardHolderName,
-      expMonth: dte.monthLong,
+      expMonth: `${dte.monthLong}`,
       expYear: `${dte.year}`,
       cvc: environment.demo.cardCVCCode,
     });

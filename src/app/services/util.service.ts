@@ -107,13 +107,13 @@ export class UtilService {
     });
   }
 
-  async presentModal(page: any, opts: any = {}, backdropDismiss = false, swipeToClose = false): Promise<any> {
+  async presentModal(page: any, opts: any = {}, backdropDismiss = false, canDismiss = false): Promise<any> {
     await this.hideModal();
     this.modal = await this.modalCtrl.create({
       component: page,
       componentProps: { ...opts, ...{ modalController: this.modalCtrl } },
       backdropDismiss: backdropDismiss,
-      swipeToClose: swipeToClose
+      canDismiss: canDismiss
     });
     await this.modal.present();
     return this.modal;
