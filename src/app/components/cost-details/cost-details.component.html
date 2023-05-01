@@ -1,11 +1,11 @@
 <ion-list>
   <ion-item-divider *ngIf="showTitle">{{cart?.name}}</ion-item-divider>
   <ion-item lines="full">
-    <ion-icon slot="start" name="fast-food-outline"></ion-icon>
+    <ion-icon slot="start" name="pricetags-outline"></ion-icon>
     <ion-label>
-      <h3>Food</h3>
+      <h3>Items</h3>
     </ion-label>
-    <ion-badge slot="end" color="success">{{cart?.food || 0 | currency:currency}}</ion-badge>
+    <ion-badge slot="end" color="success">{{cart?.itemCost || 0 | currency:currency}}</ion-badge>
   </ion-item>
   <ion-item lines="full">
     <ion-icon slot="start" name="cog-outline"></ion-icon>

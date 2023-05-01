@@ -1,7 +1,10 @@
 <ion-content [fullscreen]="true">
   <div id="container">
     <strong>Welcome to POS App</strong>
-    <br />
-    <ion-button routerLink="/tabs">Continue</ion-button>
+    <div *ngFor="let app of apps">
+      <ion-button *ngIf="app.admin" (click)="setApp(app, true)">Continue as {{app.name}} Admin</ion-button>
+      <br/>
+      <ion-button *ngIf="app.user" (click)="setApp(app, false)">Continue as {{app.name}} User</ion-button>
+    </div>
   </div>
 </ion-content>

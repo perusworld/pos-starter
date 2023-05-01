@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Cart, Menu, MenuItem, Order, Payment } from './model';
+import { APP_CONFIG, App, Cart, Menu, MenuItem, Order, Payment } from './model';
 import { RandomOrdersApiService } from './random-orders-api.service';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PosApiService {
+export class OrderApiService {
 
-  constructor(private rndOrdApi: RandomOrdersApiService) { }
+  constructor(private rndOrdApi: RandomOrdersApiService, private ctx: StorageService) { }
 
   public async getJson(file: string) {
     let ret = null;
@@ -39,7 +40,7 @@ export class PosApiService {
   }
   public async menu(): Promise<Menu> {
     const data = await this.doPost('/menu', {});
-    return data ? data : this.getJson(`./assets/data/${environment.menu}.json`);
+    return data ? data : this.getJson(`./assets/data/${((await this.ctx.get(APP_CONFIG)) as App).menu}.json`);
   }
   public async orders(): Promise<Order[]> {
     const data = await this.doPost('/orders', {});

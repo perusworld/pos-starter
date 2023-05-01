@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Cart, Menu, MenuItem, Order, Payment } from './model';
-import { PosApiService } from './pos-api.service';
+import { Menu, MenuItem, Order, Payment } from './model';
+import { OrderApiService } from './order-api.service';
 import { StorageService } from './storage.service';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { StorageService } from './storage.service';
 })
 export class OrderService {
 
-  constructor(private posApi: PosApiService, private ctx: StorageService) { }
+  constructor(private posApi: OrderApiService, private ctx: StorageService) { }
 
   public groupSize() {
     return 3;

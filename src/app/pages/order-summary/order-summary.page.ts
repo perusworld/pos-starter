@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cart } from 'src/app/services/model';
 import { OrderService } from 'src/app/services/order.service';
+import { StorageService } from 'src/app/services/storage.service';
 import { UtilService } from 'src/app/services/util.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class OrderSummaryPage implements OnInit {
     cart: undefined as (Cart | undefined),
   }
 
-  constructor(activatedRoute: ActivatedRoute, private orderSvc: OrderService, private utl: UtilService, private router: Router) {
+  constructor(activatedRoute: ActivatedRoute, private orderSvc: OrderService, private utl: UtilService,
+    private router: Router, private ctx: StorageService) {
     activatedRoute.params.subscribe((params: any) => {
       this.data.idParam = params.id;
     });
@@ -53,7 +55,7 @@ export class OrderSummaryPage implements OnInit {
    * onContinue
    */
   public async onContinue() {
-    this.router.navigate([`/tabs`]);
+    this.router.navigate([await this.utl.routeFor(this.ctx)]);
   }
 
 }

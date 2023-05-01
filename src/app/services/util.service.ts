@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { AlertController, LoadingController, ModalController, Platform, ToastController } from '@ionic/angular';
 import { DateTime, Settings } from 'luxon';
 import { environment } from 'src/environments/environment';
-import { OrderStatus } from './model';
+import { APP_CONFIG, App, OrderStatus } from './model';
+import { StorageService } from './storage.service';
+import { NEW_ORDER } from '../pages/order-details/order-details.page';
 
 export enum ProgressStepState {
   NOT_STARTED = "notStarted", SUCCESS = "success", IN_PROGRESS = "inProgress", FAILED = "failed"
@@ -207,6 +209,14 @@ export class UtilService {
   //     .then(resp => resp as StaticConfig);
   // }
 
+
+  /**
+   * routeFor
+   */
+  public async routeFor(ctx: StorageService) {
+    const app: App = await ctx.get(APP_CONFIG);
+    return app.admin ? '/tabs' : `/order-details/${NEW_ORDER}`;
+  }
 
 
 }

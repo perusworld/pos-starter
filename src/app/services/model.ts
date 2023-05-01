@@ -1,6 +1,15 @@
+export const APP_CONFIG = "-app-config-";
+
+export interface App {
+  name: string,
+  menu: string,
+  admin: boolean,
+}
+
 export interface Menu {
   menu: MenuItem[]
 }
+
 
 export interface MenuItem {
   id: string,
@@ -37,7 +46,7 @@ export interface Payment {
 export interface Cart extends Order {
   items: OrderItem[],
   count: number;
-  food: number;
+  itemCost: number;
   total: number;
   tax: number;
   payment: Payment;

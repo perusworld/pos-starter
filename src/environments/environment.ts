@@ -4,9 +4,21 @@
 
 export const environment = {
   production: false,
-  posAppName: 'Any Donalds',
+  apps: [
+    {
+      name: 'Any Donalds',
+      menu: 'fast-food-menu',
+      admin: true,
+      user: true,
+    },
+    {
+      name: 'Any Mart',
+      menu: 'ecom-products',
+      admin: false,
+      user: true,
+    }
+  ],
   timeZone: 'America/Los_Angeles',
-  menu: 'fast-food-menu',
   currency: 'USD',
   tax: 9.5,
   demo: {

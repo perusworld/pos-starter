@@ -73,7 +73,7 @@ export class RandomOrdersApiService {
       items: [] as OrderItem[],
       status: OrderStatus.New,
       date: DateTime.now().toFormat(DATE_FORMAT),
-      food: 0,
+      itemCost: 0,
       total: 0,
       count: 0,
       tax: 0,
@@ -106,9 +106,9 @@ export class RandomOrdersApiService {
         items.push({ item: item, qty: 1 });
       }
       cart.count++;
-      cart.food += item.priceValue;
-      cart.tax = cart.food * environment.tax / 100;
-      cart.total = cart.food + cart.tax;
+      cart.itemCost += item.priceValue;
+      cart.tax = cart.itemCost * environment.tax / 100;
+      cart.total = cart.itemCost + cart.tax;
       ret = true;
     }
     return ret;

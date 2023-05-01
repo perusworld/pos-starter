@@ -17,7 +17,7 @@ export class StorageService {
   }
 
   public async set<T>(key: string, value: T) {
-    this.store?.set(key, value);
+    await this.store?.set(key, value);
   }
   public async get<T>(key: string) : Promise<T> {
     return this.store?.get(key);
