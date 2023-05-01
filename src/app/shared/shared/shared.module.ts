@@ -14,11 +14,12 @@ import { CardInputComponent } from 'src/app/components/card-input/card-input.com
 import { CostDetailsComponent } from 'src/app/components/cost-details/cost-details.component';
 import { OrderStatsComponent } from 'src/app/components/order-stats/order-stats.component';
 import { CardTapComponent } from 'src/app/components/card-tap/card-tap.component';
+import { QrShowComponent } from 'src/app/components/qr-show/qr-show.component';
 
 @NgModule({
   declarations: [TitleComponent, FooterComponent, OrdersListComponent, MenuListComponent, SalesListComponent,
     MenuItemComponent, CartListComponent, CardInputComponent, CostDetailsComponent, OrderStatsComponent,
-  CardTapComponent],
+  CardTapComponent, QrShowComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -29,6 +30,6 @@ import { CardTapComponent } from 'src/app/components/card-tap/card-tap.component
   exports: [CommonModule, FormsModule, IonicModule, RouterModule, ReactiveFormsModule,
     TitleComponent, FooterComponent, OrdersListComponent, MenuListComponent, SalesListComponent,
     MenuItemComponent, CartListComponent, CardInputComponent, CostDetailsComponent, OrderStatsComponent,
-    CardTapComponent]
+    CardTapComponent, QrShowComponent]
 })
 export class SharedModule { }

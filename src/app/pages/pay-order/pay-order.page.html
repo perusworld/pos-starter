@@ -2,4 +2,5 @@
 <ion-content>
   <app-card-input [cart]="data.cart" (onPayment)="onPayment($event)"></app-card-input>
   <app-card-tap (onPayment)="onPayment($event)"></app-card-tap>
+  <app-qr-show [setCart]="data.cart" (onPayment)="onPayment($event)"></app-qr-show>
 </ion-content>

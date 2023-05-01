@@ -26,6 +26,7 @@ export const environment = {
     cardNumber: '5555555555554444',
     cardCVCCode: '123',
   },
+  qrPrefix: 'https://qr.somewhere.com/',
   features: {
     showHeader: true,
   },

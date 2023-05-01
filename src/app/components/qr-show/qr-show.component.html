@@ -1,0 +1,27 @@
+<ion-list>
+  <ion-button expand="block" color="primary" (click)="showTap()">
+    <ion-icon name="qr-code-outline"></ion-icon>
+    Scan to pay
+  </ion-button>
+</ion-list>
+<ion-modal [isOpen]="data.isOpen" (willDismiss)="onWillDismiss($event)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancelTap()">Cancel</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div id="container">
+        <ion-row class="ion-justify-content-center">
+          <ion-img [src]="data.qrCode" (click)="callPayment()"></ion-img>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+          <strong>Scan to pay</strong>
+        </ion-row>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>

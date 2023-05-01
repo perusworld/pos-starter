@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { APP_CONFIG, App, OrderStatus } from './model';
 import { StorageService } from './storage.service';
 import { NEW_ORDER } from '../pages/order-details/order-details.page';
+import * as QRCode from 'qrcode'
 
 export enum ProgressStepState {
   NOT_STARTED = "notStarted", SUCCESS = "success", IN_PROGRESS = "inProgress", FAILED = "failed"
@@ -202,13 +203,11 @@ export class UtilService {
     return ret;
   }
 
-
   // public async loadStaticConfig(): Promise<StaticConfig> {
   //   return fetch('./assets/data/static-config.json')
   //     .then(resp => resp.json())
   //     .then(resp => resp as StaticConfig);
   // }
-
 
   /**
    * routeFor
@@ -218,5 +217,10 @@ export class UtilService {
     return app.admin ? '/tabs' : `/order-details/${NEW_ORDER}`;
   }
 
-
+  /**
+   * genQRCode
+   */
+  public async genQRCode(data: string, version = 5) {
+    return QRCode.toDataURL(data, { version });
+  }
 }
