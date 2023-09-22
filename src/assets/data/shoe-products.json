@@ -1,0 +1,60 @@
+{
+    "menu": [
+        {
+            "id": "1",
+            "name": "Shoe White",
+            "price": "$39.99",
+            "priceValue": 39.99,
+            "image": "assets/images/shoe-white.png"
+        },
+        {
+            "id": "2",
+            "name": "Shoe Red White",
+            "price": "$99.99",
+            "priceValue": 99.99,
+            "image": "assets/images/shoe-red.png"
+        },
+        {
+            "id": "3",
+            "name": "Shoe Green",
+            "price": "$79.99",
+            "priceValue": 79.99,
+            "image": "assets/images/shoe-green.png"
+        },
+        {
+            "id": "4",
+            "name": "Shoe Full Red",
+            "price": "$149.99",
+            "priceValue": 149.99,
+            "image": "assets/images/shoe-full-red.png"
+        },
+        {
+            "id": "5",
+            "name": "Shoe Black White",
+            "price": "$29.99",
+            "priceValue": 29.99,
+            "image": "assets/images/shoe-black-white.png"
+        },
+        {
+            "id": "6",
+            "name": "Shoe Black",
+            "price": "$39.99",
+            "priceValue": 39.99,
+            "image": "assets/images/shoe-black.png"
+        },
+        {
+            "id": "7",
+            "name": "Shoe Black Green",
+            "price": "$109.99",
+            "priceValue": 109.99,
+            "image": "assets/images/shoe-black-green.png"
+        },
+        {
+            "id": "8",
+            "name": "Shoe Red White",
+            "price": "$99.99",
+            "priceValue": 99.99,
+            "image": "assets/images/shoe-red-white.png"
+        }
+    ]
+}

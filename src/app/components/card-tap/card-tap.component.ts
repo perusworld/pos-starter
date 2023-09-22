@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 import { DateTime } from 'luxon';
 import { Payment, TapPurpose } from 'src/app/services/model';
 import { UtilService } from 'src/app/services/util.service';
@@ -8,8 +10,10 @@ import { environment } from 'src/environments/environment';
   selector: 'app-card-tap',
   templateUrl: './card-tap.component.html',
   styleUrls: ['./card-tap.component.scss'],
+  standalone: true,
+  imports: [CommonModule, IonicModule],
 })
-export class CardTapComponent implements OnInit {
+export class CardTapComponent  implements OnInit {
 
   @Input() purpose = TapPurpose.PAN;
   @Output() onPayment = new EventEmitter<Payment>();
@@ -56,6 +60,5 @@ export class CardTapComponent implements OnInit {
   onWillDismiss(event: Event) {
     this.data.isOpen = false;
   }
-
 
 }

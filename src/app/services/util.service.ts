@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { AlertController, LoadingController, ModalController, Platform, ToastController } from '@ionic/angular';
 import { DateTime, Settings } from 'luxon';
 import { environment } from 'src/environments/environment';
-import { APP_CONFIG, App, OrderStatus } from './model';
+import { APP_CONFIG, App, NEW_ORDER, OrderStatus } from './model';
 import { StorageService } from './storage.service';
-import { NEW_ORDER } from '../pages/order-details/order-details.page';
 import * as QRCode from 'qrcode'
 
 export enum ProgressStepState {
@@ -15,6 +14,11 @@ export interface ProgressCallback {
   updateProgress(step: number, state: ProgressStepState, message: string): void;
   done(state: ProgressStepState, message: string): void;
 }
+
+export const DISPLAY_DATE_FORMAT = 'dd-MM-yyyy';
+export const QUERY_DATE_FORMAT = 'yyyy-MM-dd';
+export const NUMBER_DATE_FORMAT = 'yyyyMMdd';
+export const YEAR_DATE_FORMAT = 'yyyy';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +51,16 @@ export class UtilService {
       }
     }
     return ret;
+  }
+
+  public dateStr(to = QUERY_DATE_FORMAT, days = 0, date = '', from = QUERY_DATE_FORMAT): string {
+    const dateTime = date === '' ? DateTime.now() : DateTime.fromFormat(date, from);
+    return dateTime.plus({ days }).toFormat(to);
+  }
+
+  public dateNum(to = NUMBER_DATE_FORMAT, days = 0, date = '', from = QUERY_DATE_FORMAT): number {
+    const dateTime = date === '' ? DateTime.now() : DateTime.fromFormat(date, from);
+    return parseInt(dateTime.plus({ days }).toFormat(to));
   }
 
   presentLoading(msg: string): Promise<any> {
@@ -214,7 +228,7 @@ export class UtilService {
    */
   public async routeFor(ctx: StorageService) {
     const app: App = await ctx.get(APP_CONFIG);
-    return app.admin ? '/tabs' : `/order-details/${NEW_ORDER}`;
+    return app.admin ? '/tabs' : `/landing`;
   }
 
   /**

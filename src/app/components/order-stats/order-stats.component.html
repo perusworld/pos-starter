@@ -1,7 +1,7 @@
 <ion-list>
   <ion-item-divider>Order Confirmed</ion-item-divider>
   <ion-item lines="none">
-    <ion-text class="ion-padding">Thank you for your purchase, your order is being prepared. your order number is
+    <ion-text class="ion-padding">{{ctx.appConfig.app?.orderConfirm}} your order number is
       <strong>{{cart?.id}}</strong></ion-text>
   </ion-item>
 </ion-list>

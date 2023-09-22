@@ -1,15 +1,26 @@
 export const APP_CONFIG = "-app-config-";
+export const NEW_ORDER = 'new-order';
+
+export interface AppConfig {
+  app?: App;
+}
 
 export interface App {
   name: string,
+  title: string,
+  description: string,
   menu: string,
   admin: boolean,
+  orderConfirm: string,
+  cardInput: boolean,
+  cardTap: boolean,
+  scanPay: boolean,
+
 }
 
 export interface Menu {
   menu: MenuItem[]
 }
-
 
 export interface MenuItem {
   id: string,

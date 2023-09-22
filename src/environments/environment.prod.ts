@@ -25,5 +25,6 @@ export const environment = {
   qrPrefix: 'https://qr.somewhere.com/',
   features: {
     showHeader: true,
+    showFooter: true,
   },
 };

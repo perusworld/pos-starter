@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 import { Cart } from 'src/app/services/model';
 import { environment } from 'src/environments/environment';
 
@@ -6,8 +8,10 @@ import { environment } from 'src/environments/environment';
   selector: 'app-cost-details',
   templateUrl: './cost-details.component.html',
   styleUrls: ['./cost-details.component.scss'],
+  standalone: true,
+  imports: [CommonModule, IonicModule],
 })
-export class CostDetailsComponent implements OnInit {
+export class CostDetailsComponent  implements OnInit {
 
   @Input() showButtons: boolean = true;
   @Input() showTitle: boolean = true;

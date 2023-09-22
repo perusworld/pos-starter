@@ -6,7 +6,7 @@
       </ion-button>
     </ion-buttons>
     <ion-title>
-      {{ titleText }} {{ titleText?'|':'' }} {{appName}}
+      {{ titleText }} {{ titleText?'|':'' }} {{ctx.appConfig.app?.name}}
     </ion-title>
     <ion-buttons slot="end" *ngIf="showButtons">
       <ion-button (click)="gotoSettings()" title="Settings">

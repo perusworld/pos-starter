@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 import { Cart } from 'src/app/services/model';
 import { environment } from 'src/environments/environment';
 
@@ -6,8 +8,10 @@ import { environment } from 'src/environments/environment';
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
   styleUrls: ['./cart-list.component.scss'],
+  standalone: true,
+  imports: [CommonModule, IonicModule],
 })
-export class CartListComponent implements OnInit {
+export class CartListComponent  implements OnInit {
 
   @Input() cart: Cart | undefined;
   @Input() showButtons: boolean = true;
@@ -42,5 +46,6 @@ export class CartListComponent implements OnInit {
   public async callClear() {
     this.onClear.emit()
   }
+
 
 }

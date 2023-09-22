@@ -2,21 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cart, Payment } from 'src/app/services/model';
 import { OrderService } from 'src/app/services/order.service';
+import { StorageService } from 'src/app/services/storage.service';
 import { UtilService } from 'src/app/services/util.service';
+import { SharedModule } from 'src/app/shared/shared/shared.module';
 
 @Component({
   selector: 'app-pay-order',
   templateUrl: './pay-order.page.html',
   styleUrls: ['./pay-order.page.scss'],
+  standalone: true,
+  imports: [SharedModule]
 })
 export class PayOrderPage implements OnInit {
 
   public data = {
     idParam: undefined,
     cart: undefined as (Cart | undefined),
-  }
+    cardInput: false,
+    cardTap: false,
+    scanPay: false,
+}
 
-  constructor(activatedRoute: ActivatedRoute, private orderSvc: OrderService, private utl: UtilService, private router: Router) {
+  constructor(activatedRoute: ActivatedRoute, private orderSvc: OrderService, private utl: UtilService, 
+    private router: Router, public ctx: StorageService) {
     activatedRoute.params.subscribe((params: any) => {
       this.data.idParam = params.id;
     });

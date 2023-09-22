@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'src/app/services/model';
 import { OrderService } from 'src/app/services/order.service';
 import { UtilService } from 'src/app/services/util.service';
+import { SharedModule } from 'src/app/shared/shared/shared.module';
 
 @Component({
   selector: 'app-menu-tab',
   templateUrl: './menu-tab.page.html',
   styleUrls: ['./menu-tab.page.scss'],
+  standalone: true,
+  imports: [SharedModule]
 })
 export class MenuTabPage implements OnInit {
   public data = {

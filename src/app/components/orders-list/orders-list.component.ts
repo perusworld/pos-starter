@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 import { Order } from 'src/app/services/model';
 import { UtilService } from 'src/app/services/util.service';
 
@@ -6,8 +8,10 @@ import { UtilService } from 'src/app/services/util.service';
   selector: 'app-orders-list',
   templateUrl: './orders-list.component.html',
   styleUrls: ['./orders-list.component.scss'],
+  standalone: true,
+  imports: [CommonModule, IonicModule],
 })
-export class OrdersListComponent implements OnInit {
+export class OrdersListComponent  implements OnInit {
 
   @Input() orders: Order[] = [];
   @Output() onNewOrder = new EventEmitter();
@@ -30,5 +34,6 @@ export class OrdersListComponent implements OnInit {
   public async callCart() {
     this.onShowCart.emit();
   }
+
 
 }
