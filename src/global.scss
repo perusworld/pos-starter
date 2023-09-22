@@ -26,7 +26,7 @@
 @import "@ionic/angular/css/flex-utils.css";
 
 
-#centered-container {
+.centered-container, #centered-container {
   text-align: center;
   position: absolute;
   left: 0;

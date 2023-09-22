@@ -48,6 +48,8 @@ export const environment = {
       scanPay: true,
     }
   ],
+  defaultApp: -1,
+  defaultAppAdmin: false,
   timeZone: 'America/Los_Angeles',
   currency: 'USD',
   tax: 9.5,

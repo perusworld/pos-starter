@@ -15,8 +15,19 @@ import { SharedModule } from '../shared/shared/shared.module';
 })
 export class HomePage {
   public apps = environment.apps;
+  public defaultApp = environment.defaultApp;
 
   constructor(private ctx: StorageService, private utl: UtilService, private router: Router) { }
+
+  async ionViewDidEnter() {
+    if (-1 !== this.defaultApp) {
+      await this.utl.snooze()
+      const app = this.apps[this.defaultApp];
+      const admin = environment.defaultAppAdmin;
+      await this.ctx.setApp({ ...app, ...{ admin } } as App)
+      this.router.navigate([await this.utl.routeFor(this.ctx)]);
+    }
+  }
 
   /**
    * setApp
