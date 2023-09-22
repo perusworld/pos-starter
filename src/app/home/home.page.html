@@ -1,10 +1,24 @@
 <ion-content [fullscreen]="true">
-  <div id="container">
-    <strong>Welcome to POS App</strong>
-    <div *ngFor="let app of apps">
-      <ion-button *ngIf="app.admin" (click)="setApp(app, true)">Continue as {{app.name}} Admin</ion-button>
-      <br/>
-      <ion-button *ngIf="app.user" (click)="setApp(app, false)">Continue as {{app.name}} User</ion-button>
-    </div>
+  <div id="centered-container" *ngIf="-1 !== defaultApp">
+    <ion-row class="ion-justify-content-center">
+      <ion-spinner name="bubbles"></ion-spinner>
+    </ion-row>
+  </div>
+
+  <div id="centered-container" *ngIf="-1 === defaultApp">
+    <ion-row class="ion-justify-content-center">
+      <div>
+        <h2>Welcome to POS App</h2>
+        <div id="btns" class="ion-justify-content-center" *ngFor="let app of apps">
+          <ion-button class="ion-text-wrap" expand="block" *ngIf="app.admin" (click)="setApp(app, true)">Continue as
+            {{app.name}}
+            Admin</ion-button>
+          <br />
+          <ion-button class="ion-text-wrap" expand="block" *ngIf="app.user" (click)="setApp(app, false)">Continue as
+            {{app.name}}
+            User</ion-button>
+        </div>
+      </div>
+    </ion-row>
   </div>
 </ion-content>
