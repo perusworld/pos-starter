@@ -21,7 +21,7 @@ export class HomePage {
   /**
    * setApp
    */
-  public async setApp(app: App, admin: boolean) {
+  public async setApp(app: any, admin: boolean) {
     await this.ctx.setApp({ ...app, ...{ admin } } as App)
     this.router.navigate([await this.utl.routeFor(this.ctx)]);
   }
