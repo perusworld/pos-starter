@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 import { DateTime } from 'luxon';
 import { Cart, Payment, TapPurpose } from 'src/app/services/model';
 import { UtilService } from 'src/app/services/util.service';
@@ -8,8 +10,10 @@ import { environment } from 'src/environments/environment';
   selector: 'app-qr-show',
   templateUrl: './qr-show.component.html',
   styleUrls: ['./qr-show.component.scss'],
+  standalone: true,
+  imports: [CommonModule, IonicModule],
 })
-export class QrShowComponent implements OnInit {
+export class QrShowComponent  implements OnInit {
 
   @Input() purpose = TapPurpose.PAN;
   @Output() onPayment = new EventEmitter<Payment>();

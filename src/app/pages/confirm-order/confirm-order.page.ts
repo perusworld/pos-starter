@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Cart, Payment } from 'src/app/services/model';
+import { Cart } from 'src/app/services/model';
 import { OrderService } from 'src/app/services/order.service';
 import { UtilService } from 'src/app/services/util.service';
+import { SharedModule } from 'src/app/shared/shared/shared.module';
 
 @Component({
   selector: 'app-confirm-order',
   templateUrl: './confirm-order.page.html',
   styleUrls: ['./confirm-order.page.scss'],
+  standalone: true,
+  imports: [SharedModule]
 })
 export class ConfirmOrderPage implements OnInit {
 
@@ -56,5 +59,4 @@ export class ConfirmOrderPage implements OnInit {
       this.router.navigate([`/order-summary/${this.data.cart?.id}`]);
     }
   }
-
 }

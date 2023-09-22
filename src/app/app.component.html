@@ -1,3 +1,6 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <div class="container-center ion-text-center" *ngIf="!loaded">
+    <ion-icon name="walk-sharp" size="large" color="warning"></ion-icon>
+  </div>
+  <ion-router-outlet *ngIf="loaded"></ion-router-outlet>
 </ion-app>

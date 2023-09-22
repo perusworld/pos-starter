@@ -1,5 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 import { DateTime } from 'luxon';
 import { Cart, Payment } from 'src/app/services/model';
 import { UtilService } from 'src/app/services/util.service';
@@ -9,8 +11,10 @@ import { environment } from 'src/environments/environment';
   selector: 'app-card-input',
   templateUrl: './card-input.component.html',
   styleUrls: ['./card-input.component.scss'],
+  standalone: true,
+  imports: [CommonModule, IonicModule, ReactiveFormsModule],
 })
-export class CardInputComponent implements OnInit {
+export class CardInputComponent  implements OnInit {
 
   public currency = environment.currency;
   public paymentForm: FormGroup;

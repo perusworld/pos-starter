@@ -1,6 +1,7 @@
 <app-title [showBackButton]="true" [titleText]="'Payment Info'" [showButtons]="true"></app-title>
 <ion-content>
-  <app-card-input [cart]="data.cart" (onPayment)="onPayment($event)"></app-card-input>
-  <app-card-tap (onPayment)="onPayment($event)"></app-card-tap>
-  <app-qr-show [setCart]="data.cart" (onPayment)="onPayment($event)"></app-qr-show>
+  <app-card-input *ngIf="ctx.appConfig.app?.cardInput" [cart]="data.cart" (onPayment)="onPayment($event)"></app-card-input>
+  <app-card-tap *ngIf="ctx.appConfig.app?.cardTap" (onPayment)="onPayment($event)"></app-card-tap>
+  <app-qr-show *ngIf="ctx.appConfig.app?.scanPay" [setCart]="data.cart" (onPayment)="onPayment($event)"></app-qr-show>
 </ion-content>
+<app-footer></app-footer>

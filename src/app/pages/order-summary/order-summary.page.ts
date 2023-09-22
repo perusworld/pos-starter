@@ -4,11 +4,14 @@ import { Cart } from 'src/app/services/model';
 import { OrderService } from 'src/app/services/order.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { UtilService } from 'src/app/services/util.service';
+import { SharedModule } from 'src/app/shared/shared/shared.module';
 
 @Component({
   selector: 'app-order-summary',
   templateUrl: './order-summary.page.html',
   styleUrls: ['./order-summary.page.scss'],
+  standalone: true,
+  imports: [SharedModule]
 })
 export class OrderSummaryPage implements OnInit {
 

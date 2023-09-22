@@ -8,14 +8,44 @@ export const environment = {
     {
       name: 'Any Donalds',
       menu: 'fast-food-menu',
+      title: 'Your one-stop destination for delicious fast food!',
+      description: `At Fast Bites, we're passionate about serving up mouthwatering burgers, crispy fries, and more. 
+      Whether you're in a hurry or looking for a quick and tasty meal, we've got you covered. Explore our menu, place an order, 
+      and experience the joy of fast food done right.`,
+      orderConfirm: 'Thank you for your purchase, your order is being prepared.',
       admin: true,
       user: true,
+      cardInput: true,
+      cardTap: true,
+      scanPay: true,
     },
     {
       name: 'Any Mart',
       menu: 'ecom-products',
+      title: 'Your one-stop online shopping destination!.',
+      description: `Discover a world of amazing products and unbeatable deals. Whether you're searching for the latest fashion trends, 
+      cutting-edge electronics, or unique gifts, we've got you covered. Start shopping now to explore our extensive catalog and enjoy a 
+      seamless online shopping experience!.`,
+      orderConfirm: 'Thank you, your order is being prepared for shipment.',
       admin: false,
       user: true,
+      cardInput: true,
+      cardTap: false,
+      scanPay: true,
+    },
+    {
+      name: 'Any Shoe',
+      menu: 'shoe-products',
+      title: 'Your one-stop destination for stylish and comfortable footwear!.',
+      description: `Discover a wide range of trendy shoes for every occasion. Whether you're looking for athletic sneakers, elegant
+      heels, or casual loafers, we've got you covered. Our carefully curated collection features the latest fashion
+      trends and high-quality brands, ensuring you'll find the perfect pair for any outfit.`,
+      orderConfirm: 'Thank you, your order is being prepared for shipment.',
+      admin: false,
+      user: true,
+      cardInput: true,
+      cardTap: false,
+      scanPay: true,
     }
   ],
   timeZone: 'America/Los_Angeles',
@@ -29,6 +59,7 @@ export const environment = {
   qrPrefix: 'https://qr.somewhere.com/',
   features: {
     showHeader: true,
+    showFooter: true,
   },
 };
 

@@ -4,7 +4,9 @@ const config: CapacitorConfig = {
   appId: 'com.yosanai.angular.pos',
   appName: 'POS Starter',
   webDir: 'www',
-  bundledWebRuntime: false
+  server: {
+    androidScheme: 'https'
+  }
 };
 
 export default config;

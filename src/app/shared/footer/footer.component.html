@@ -1,3 +1,5 @@
-<p>
-  footer works!
-</p>
+<ion-footer *ngIf="showFooter">
+  <ion-toolbar>
+    <ion-title>&copy; {{year}} {{ctx.appConfig.app?.name}}</ion-title>
+  </ion-toolbar>
+</ion-footer>

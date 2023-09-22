@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { OrderApiService } from './order-api.service';
 
-describe('PosApiService', () => {
+describe('OrderApiService', () => {
   let service: OrderApiService;
 
   beforeEach(() => {

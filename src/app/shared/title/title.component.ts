@@ -1,6 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { APP_CONFIG, App } from 'src/app/services/model';
+import { IonicModule } from '@ionic/angular';
+import { OrderService } from 'src/app/services/order.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { UtilService } from 'src/app/services/util.service';
 import { environment } from 'src/environments/environment';
@@ -9,6 +11,8 @@ import { environment } from 'src/environments/environment';
   selector: 'app-title',
   templateUrl: './title.component.html',
   styleUrls: ['./title.component.scss'],
+  standalone: true,
+  imports: [CommonModule, IonicModule]
 })
 export class TitleComponent implements OnInit {
   @Input() titleText: string = '';
@@ -16,13 +20,10 @@ export class TitleComponent implements OnInit {
   @Input() showBackButton: boolean = false;
 
   public showHeader = environment.features.showHeader;
-  public appName = 'App Name';
 
-  constructor(private router: Router, private ctx: StorageService, private utl: UtilService) {}
+  constructor(private router: Router, public ctx: StorageService, private utl: UtilService, private orderService: OrderService) { }
 
   async ngOnInit() {
-    const app: App = await this.ctx.get(APP_CONFIG);
-    this.appName = app.name;
   }
 
   /**
@@ -44,6 +45,7 @@ export class TitleComponent implements OnInit {
    */
   public async doLogout() {
     // await this.auth.doLogout();
+    await this.orderService.newOrder();
     this.router.navigate(['/home']);
   }
 

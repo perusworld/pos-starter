@@ -17,15 +17,12 @@ import { CardTapComponent } from 'src/app/components/card-tap/card-tap.component
 import { QrShowComponent } from 'src/app/components/qr-show/qr-show.component';
 
 @NgModule({
-  declarations: [TitleComponent, FooterComponent, OrdersListComponent, MenuListComponent, SalesListComponent,
-    MenuItemComponent, CartListComponent, CardInputComponent, CostDetailsComponent, OrderStatsComponent,
-  CardTapComponent, QrShowComponent],
+  declarations: [],
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    RouterModule,
-    ReactiveFormsModule,
+    CommonModule, FormsModule, IonicModule, RouterModule, ReactiveFormsModule,
+    TitleComponent, FooterComponent, OrdersListComponent, MenuListComponent, SalesListComponent,
+    MenuItemComponent, CartListComponent, CardInputComponent, CostDetailsComponent, OrderStatsComponent,
+    CardTapComponent, QrShowComponent
   ],
   exports: [CommonModule, FormsModule, IonicModule, RouterModule, ReactiveFormsModule,
     TitleComponent, FooterComponent, OrdersListComponent, MenuListComponent, SalesListComponent,
