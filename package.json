@@ -47,7 +47,7 @@
     "@capacitor/status-bar": "5.0.6",
     "@ionic/angular": "^7.0.0",
     "@ionic/storage-angular": "^4.0.0",
-    "ethers": "^6.7.1",
+    "ethers": "^6.13.5",
     "ionicons": "^7.0.0",
     "luxon": "^3.4.3",
     "qrcode": "^1.5.3",
