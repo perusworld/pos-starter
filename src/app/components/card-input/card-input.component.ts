@@ -57,7 +57,8 @@ export class CardInputComponent  implements OnInit {
   }
 
   public onDateChange(date: any) {
-    this.data.expDate = DateTime.fromISO(date.detail.value);
+    const dateTime = DateTime.fromISO(date.detail.value);
+    dateTime.isValid ? this.data.expDate = dateTime : this.data.expDate = DateTime.now();
   }
 
   /**
